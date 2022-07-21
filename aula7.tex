@@ -1,0 +1,94 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+\graphicspath{{./fig/aula7}}
+
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=HTML,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  commentstyle=\color{red}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{green!10},
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+}
+
+
+\title{Desenvolvimento Web Básico}
+\subtitle{Aula 7}
+
+\usetheme{lucid}
+
+\begin{document}
+\frame{
+ \titlepage
+}
+
+%--------------------------------------------------------------------------
+\begin{frame}{Na aula de hoje...} 
+\tableofcontents 
+\end{frame}
+%--------------------------------------
+\begin{frame}{Formulários}
+  \begin{enumerate}
+      \item Formulários são utilizados na maior parte das aplicações Web para coletar dados dos usuários e registrar alterações nos mesmos;
+      \item Vamos rever os principais elementos de formulários, e como utiliza-los com JavaScript;
+  \end{enumerate}
+\end{frame}
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------
+\section{Atividade de aula}
+\begin{frame}{Atividade}{Envie seu repositório feito em aula}
+  \begin{enumerate}
+      \item Seguindo os passos da aula, livros indicados e, a leitura adicional recomendada: \textcolor{blue}{\href{https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site}{Getting started with github pages}}, DESENVOLVA:
+      \item Os passos realizados em aula;
+      \item Envie no BlackBoard o link do repositório criado \textbf{em aula} e da GitHubPage;
+  \end{enumerate}
+
+
+\end{frame}
+%-----------------------------------------------------------------------
+\section{Leitura recomendada}
+\begin{frame}{Leitura complementar}
+ Para mais informações sobre Git e GitHub, leia:\\
+  \vspace{0.6cm}
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+%      \textbf{Capítulo 29}\\
+ \cite{githubpages2022}\\
+ E\\
+ \cite{beer2015github}.
+   \end{column}
+   \begin{column}{0.4\textwidth}
+   % \includegraphics[height=0.7\paperheight]{introgit.jpg} \\
+   \end{column}
+
+ \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------------
+\section{Referências}
+
+\begin{frame}{Referências}%[allowframebreaks]
+\small
+\begin{center}
+\tiny
+\bibliographystyle{apalike}
+\bibliography{ref_aula}
+\end{center}
+\end{frame}
+
+\end{document}
+
+\end{document}

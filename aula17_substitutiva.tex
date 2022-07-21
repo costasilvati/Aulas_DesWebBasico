@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+\graphicspath{{./fig/aula7}}
+
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=HTML,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{red}, 
+  commentstyle=\color{red}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{green!10},
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+}
+
+
+\title{Desenvolvimento Web Básico}
+\subtitle{Substitutiva}
+
+\usetheme{lucid}
+
+\begin{document}
+\frame{
+ \titlepage
+}
+
+%--------------------------------------------------------------------------
+\begin{frame}{Na aula de hoje...} 
+\tableofcontents 
+\end{frame}
+%--------------------------------------
+\begin{frame}{Instruções}
+Bem vindo a avaliação substitutiva! \\
+\textbf{Orientações para a prova:}
+
+  \begin{enumerate}
+      \item Leia atentamente todas as questões e orientações;
+      \item Desenvolva o que se pede por partes (isso ajuda a evitar acumulo de erros);
+     \item Você pode utilizar todo o tempo da aula para desenvolver a sua avaliação, não tenha pressa!
+     \item Cada item desenvolvido vale pontos (indicados na questão), faça tudo o que conseguir de cada item;
+     \item Tudo será considerado, mesmo que incompleto; 
+  \end{enumerate}
+\end{frame}
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------
+\section{Descrição}
+\begin{frame}{Descrição}{Envie seu repositório feito em aula}
+A avaliação substitutiva da disciplina de Desenvolvimento WEB Básico versará sobre todos os conetúdos do semestre (HTML, CSS, JS + GitHub)
+  \begin{enumerate}
+      \item Como serei avaliado?
+      \item Questão prática:
+      \item A prova terá uma questão que solicitará o desenvolvimento de HTML, CSS com Bootstrap e Javascript (JS);
+      \item O aluno deve saber como implementar o código para Consumir uma API;
+      \item Cadastrar, editar, consultar e listar, dados via JS usando JSON;
+      \item Validações de formulários HTML;
+  \end{enumerate}
+
+\end{frame}
+%-----------------------------------------------------------------------
+\begin{frame}{Material permitido}
+    \textbf{Material permitido:}\\
+
+Cola institucional: 1 folha sulfite A4 manuscrita (escrita a mão), com tudo o que o aluno conseguir anotar (frente e verso).\\
+\vspace{0,5cm}
+Só pode realizar a avaliação os alunos que não atingiram 6,0 pontos de média.\\
+\vspace{0,5cm}
+
+A avaliação tem valor de 5,0 pontos, e substituirá a menor nota do aluno ( a substituição é automática via sistema no momento do lançamento da nota).\\
+Bons estudos!
+\\
+\vspace{0,5cm}
+Dúvidas devem ser enviadas para, juliana.silva@up.edu.br.
+\end{frame}
+
+%----------------------------------------------------------------------------
+\begin{frame}{Pergunta}
+\small
+Desenvolva uma aplicação HTML, CSS e JS que receba informações de um aluno e apresente a resposta em uma nova página, conforme as orientações  abaixo. O formulário deve ter as seguintes características:
+    \begin{itemize}
+        \item (0,5 pontos) Um input para a digitação de nome que receba o nome digitado e salve em uma variável JS quando o usuário fizaer a submissão do formulário;
+        \item (1,0 pontos) Quatro input para a digitação de nota1, nota2, nota3, nota4 que receba as notas digitadas e salve em um vetor JS  de 4 posições quando o usuário fizaer a submissão do formulário;
+        \item (1,0 pontos)  O formulário deve calcular a média do aluno e exibir o resultado automaticamente quando qualquer um dos campos de nota forem editados;
+        \item (0,5 pontos) O formulário só deve seguir para outra página (submeter) se todas as notas estiverem preenchidas;
+        
+    \end{itemize}
+    Continua..... 
+\end{frame}
+%-------------------------------------------------
+\begin{frame}{Continuação...}
+\small
+\begin{itemize}
+    \item (1,5 pontos) O formulário deve conter um botão "Registrar resultado", ao receber um clique, esse botão deve encaminhar o usuário para uma nova página que exiba:
+        \item (0,5 pontos) "APROVADO" caso a média calculada seja maior que 6;
+        \item (0,5 pontos) "EXAME" caso a média esteja entre 2 e 5,9;
+        \item (0,5 pontos) "REPROVADO" caso a média seja menor que 2.
+        \item (0,5 pontos) Faça o upload do código no Github e envie o link do repositório como resposta.
+\end{itemize}
+Caso não consiga publicar o repositório no Github, o aluno pode colocar os arquivos desenvolvidos em uma pasta na nuvem (Exemplo; Google Drive, One Drive, DropBox) e enviar o link de compartilhamento da mesma, links quebrados receberão nota 0. (Teste o link em uma guia anônima do navegador antes do envio!)
+\end{frame}
+%------------------------------------------------
+\section{Referências}
+
+\begin{frame}{Referências}%[allowframebreaks]
+\small
+\begin{center}
+\tiny
+\bibliographystyle{apalike}
+\bibliography{ref_aula}
+\end{center}
+\end{frame}
+
+\end{document}
+
+\end{document}
