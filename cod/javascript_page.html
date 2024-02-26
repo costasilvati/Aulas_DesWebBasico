@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="javascript_page.css">
+<script src="myScript1.js"></script>
+</head>
+<body>
+
+<div class="header">
+  <h2>Header</h2>
+  <h3>CSS Template utilizando Float</h3>
+  <p>Neste exemplo, nós criamos um header, três colunas diferentes e um rodapé. Em dispositivos pequenos, as colunas vão ficar empilhadas umas sobre as outras.
+      Altere o tamanho da janela para visualizar o efeito responsivo.</p>
+</div>
+
+<div class="row">
+  <div class="column side">Coluna</div>
+  <div class="column middle">
+  <section id="section1">
+    <h2>Primeiro JavaScript</h2>
+    <button type="button" onmouseover="document.getElementById('demo').innerHTML = Date()"
+onmouseout="document.getElementById('demo').innerHTML = ''">
+        Clique aqui para mostrar a data e a hora!
+    </button>
+    <p id="demo"></p>
+  </section>  
+  <section id="section2">
+    <h2>Outros usos de  innerHTML</h2>
+    <p id="inP">A propriedade innerHTML altera ou retorna o conteúdo de um elemento HTML</p>
+    <button type="button" onclick="myFunction()">
+        Pegar valor do parágrafo acima.
+    </button>
+    <p id="outP"></p>
+<script>
+ function myFunction(){
+   var x = document.getElementById("inP").innerHTML;
+   document.getElementById("outP").innerHTML = x;
+ }
+</script>
+    </section>
+<section id="section3">
+<h2>O que JavaScript pode fazer?</h2>
+<p>JavaScript pode alterar atributos HTML</p>
+<p>Nesse caso JavaScript altera o src (fonte) atributo de uma imagem.</p>
+<button 
+ onclick="document.getElementById('myImage').src='pic_bulbon.gif'">
+ Ascenda a luz
+</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button 
+ onclick="document.getElementById('myImage').src='pic_bulboff.gif'">
+ Apague a luz
+</button>
+
+<p id="elem">JavaScript pode alterar o estilo de um elemento</p>
+
+<button type="button" 
+    onclick="document.getElementById('elem').style.fontSize='35px'">
+    Click Me!
+</button>
+<p id="hs">JavaScript pode ocultar elementos</p>
+<p></p>
+<button type="button" 
+    onclick="document.getElementById('hs').style.display='none'">
+    Esconda o paragrafo
+</button>
+
+<p id="oculto" style="display: none">Hello JavaScript</p>
+<p> JavaScript pode revelar elementos ocultos</p>
+<button type="button" 
+        onclick="document.getElementById('oculto').style.display='block'">
+    Revele um elemento
+</button>
+</section>
+<section id="section4">
+    
+<h2>Recarregar o HTML </h2>
+<p>Utilizando o método document.write() o HTML é totalmente recarregado.</p>
+<button onclick="document.write(5 + 6)">Teste document.write()</button>          
+
+<h2>Janela de alerta</h2>
+
+<p>Nesta seção da página HTML esta o código que gera uma janela de alerta.
+<button onclick="window.alert(5 + 6);">Clique aqui para exibir a janela</button> 
+
+<h2>Utilizando console log</h2>
+<script>
+console.log(5 + 6);
+</script>
+
+<h2>Variáveis JavaScript</h2>
+Qual a saída para estes códigos em JavaScript?
+<p>var x = 5 + 2 + 3;</p>
+<p id="p1"></p>
+<button onclick="document.getElementById('p1').innerHTML = 5+3+2;">
+    Teste a saída: 5+3+2</button> 
+<p>var x = "John" + " " + "Doe";</p>
+<p id="p2"></p>
+<button onclick="document.getElementById('p2').innerHTML = 'John' + ' ' + 'Doe';">
+    Teste a saída: 'John' + ' ' + 'Doe'</button> 
+<p>var x = "5" + 2 + 3;</p>
+<p id="p3"></p>
+<button onclick="document.getElementById('p3').innerHTML = '5'+3+2;">
+    Teste a saída: '5'+3+2</button>
+</section>
+      
+      
+  </div>
+  <div class="column side">Coluna</div>
+</div>
+    
+
+<div class="footer">
+  <p>Rodapé (Footer)</p>
+</div>
+
+</body>
+</html>
+

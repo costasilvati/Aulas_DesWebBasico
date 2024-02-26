@@ -24,7 +24,7 @@
   xleftmargin=0pt,
 }
 
-
+\date{}
 \title{Desenvolvimento Web Básico}
 \subtitle{Aula 4}
 
@@ -40,286 +40,136 @@
 \tableofcontents 
 \end{frame}
 
-\section{Introdução}
-\begin{frame}{Tendências...}
-  O GitHub esta mudando o modo como software é criado.
+%-----------------------------------------------------
+\section{Bordas}
+\begin{frame}{Bordas CSS}
+	Propriedades de borda
+ \begin{itemize}
+  \item \textbf{dotted} - Define uma borda pontilhada
+	\item \textbf{dashed} - Define uma borda tracejada
+	\item \textbf{solid} - Define uma borda sólido
+	\item \textbf{double} - Define uma margem dupla
+  \item \textbf{groove} - Define uma borda sulcada 3D. O efeito depende do valor border-color
+ \end{itemize}
+
+\end{frame}
+%-----------------------------------------------------
+\begin{frame}{Bordas CSS}
+	Propriedades de borda
+ \begin{itemize}
+	\item \textbf{ridge} - Define uma borda ridged 3D. O efeito depende do valor border-color
+	\item \textbf{inset} - Define uma borda inset 3D. O efeito depende do valor border-color
+	\item \textbf{outset} - Define uma borda início 3D. O efeito depende do valor border-color
+	\item \textbf{none} - Define sem fronteira
+	\item \textbf{hidden} - Define uma borda escondida
+ \end{itemize}
+\end{frame}
+%-----------------------------------------------------
+\begin{frame}{Bordas CSS}
+Para editar partes da borda:
 \begin{itemize}
-  \item Concebido originalmente para facilitar colaboração entre 
-desenvolvedores;
-   \item Se transformou rapidamente na plataforma padrão para 
-desenvolvimento de software.
-   \item Ao contrário do que muitos pensam, o GitHub possui outras 
-funções além de armazenamento de código.
-\end{itemize}
+	\item \textbf{border-top-style:} dotted;
+  \item \textbf{border-right-style:} solid;
+  \item \textbf{border-bottom-style:} dotted;
+  \item \textbf{border-left-style:} solid;
+  \item \textbf{border-width:} 20px;
+ \end{itemize}
+ \tiny Fontes: \cite{wschool2018html, purewal2014learning}
 \end{frame}
-%----------------------------------------------------------------------------
-\section{Git}
-\begin{frame}{O que é Git??}
-   Git é um sistema de controle de versões.\\
-   E o que isso quer dizer?
-  \begin{columns}
-    \begin{column}{0.4\textwidth}
-       \includegraphics[height=0.4\paperheight]{git_logo.png} \\
-       \tiny{Logomarca projeto Git}.
-    \end{column}
-    \begin{column}{0.4\textwidth}
-      \begin{itemize}
-        \item Um sistema de controle de versões é um software concebido 
-para manter registros de alterações;
-	 \item As alterações podem ser em arquivos de código ou outros 
-tipos de arquivos;
-      \end{itemize} 
-    \end{column}    
-  \end{columns}
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Git}
-  \begin{block}{Definição}
-    O Git é um sistema de controle de versão \textit{distribuído}, o que 
-significa que todos os que estiverem trabalhando em um projeto no Git terão uma 
-cópia de todo o histórico do projeto, e não apenas do estado atual dos aquivos.
-  \end{block}
-  \tiny{\cite{beer2015github}}
-
+%-----------------------------------------------------
+\section{Estilo com base em estado}
+\begin{frame}{CSS com base no estado}
+É possível estilizar elementos com base no estado deles:\\
+O CSS abaixo estiliza um link de verde quando não visitado, rosa quando visitado e sem decoração ao passar do mouse.
+\begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/css_estado.png} \\
+	  \end{center}
+ \tiny Fontes: \cite{mdn2023}
 \end{frame}
 
-%-----------------------------------------------------------------
-\section{GitHub}
-\begin{frame}{GitHub}{Definição}
-  O GitHub é um site em que você podecarregar uma cópia de seu repositório 
-Git.\\
-Ele permite:
-  \begin{itemize}
-   \item Colaborar facilmente com outras pessoas em um projeto.
-    \item Disponibiliza um local centralizado para compartilhar o 
-repositório;
-     \item Utilizar uma interface web para visualizar e utilizar recursos;
-     \item Especificar, discutir e revisar alterações junto a sua equipe 
-de maneira eficiente.
-  \end{itemize}
-
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Qual a diferença??}
-  \begin{columns}
-    \begin{column}{0.4\textwidth}
-      \begin{center}
-       \includegraphics[height=0.4\paperheight]{git_logo.png} \\
-       \tiny{Logomarca projeto Git}.
-      \end{center}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-      \begin{center}
-      \includegraphics[height=0.4\paperheight]{github_logo.png} \\
-       \tiny{Logomarca projeto GitHub}.
-      \end{center}
-    \end{column}    
-  \end{columns}
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Por que usar Git??}
-   Mesmo para quem trabalho sozinho, existem várias vantagens na 
-utilização do Git.
-  \begin{columns}
-    \begin{column}{0.3\textwidth}
-       \includegraphics[height=0.4\paperheight]{git_logo.png} \\
-       \tiny{Logomarca projeto Git}.
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item Capacidade de desfazer alterações;
-	 \item Histórico completo de todas as alterações;
-	 \item Registro do motivo pelo qual as alterações foram feitas;
-	 \item Confiança para alterar qualquer trabalho;
-      \end{itemize} 
-    \end{column}    
-  \end{columns}
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Por que usar GitHub??}
-   Muito mais que um local para guardar repositórios Git, ele proporciona 
-diversas vantagens adicionais, como:
-  \begin{columns}
-    \begin{column}{0.3\textwidth}
-       \includegraphics[height=0.4\paperheight]{github_logo.png} \\
-       \tiny{Logomarca projeto GitHub}.
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item Documentar requisitos;
-	 \item Colaborar com linhas independentes da história;
-	 \item Revisar um trabalho em progresso;
-	 \item Ver o progresso da equipe.
-      \end{itemize} 
-    \end{column}    
-  \end{columns}
-\end{frame}
-%-----------------------------------------------------------------
-\section{Conceitos}
-\begin{frame}{Conceitos Fundamentais}
-  Para trabalhar com Git e GitHub é necessário entender alguns conceitos 
-fundamentais para que você desenvolva de maneira eficiente.
-\begin{block}{commit}
- Sempre que suas alterações forem salvas em um ou mais arquivos, para serem 
-guardadas no histórico do Git, você estará realizando um novo \textit{commit}.
-\end{block}
-
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Conceitos Fundamentais}
-\begin{block}{Mensagem de commit}
- Sempre que você fizer um \textit{commit} será necessário fornecer uma mensagem 
-que descreva o motivo da alteração. Esta mensagem terá uma valor inestimável no 
-futuro!
-\end{block}
-\begin{block}{\textit{Branch} (ramo)}
-  \textit{Branch} é uma série independente de \textit{commit}s laterais que 
-pode ser usada para fazer uma experiência ou para criar uma nova funcionalidade.
-\end{block}
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Conceitos Fundamentais}
-\begin{block}{\textit{Branch master}  (ramo principal)}
-  Sempre que um projeto Git for criado, um \textit{branch default} chamado 
-master será criado. Esse é o \textit{branch} em que seu trabalho deverá ser 
-incluido em algum momento, quando estiver pronto para a produção.
-\end{block}
-\begin{block}{\textit{Branch de feature} (ramo de funcionalidade)}
-  Sempre que uma nova funcionalidade for implementada, você deverá criar um 
-\textit{branch} para trabalhar com ela.
-\end{block}
-\end{frame}
-%-----------------------------------------------------------------
-\begin{frame}{Conceitos Fundamentais}
-\begin{block}{\textit{Fork}  (bifurcar)}
-  Caso você não possua autorização para fazer alterações diretamente em um 
-projeto. Se quiser submeter alterações a um projeto desse tipo, inicialmente 
-você deve criar uma cópia desse projeto com a sua conta de usuário GitHub.
-\end{block}
-\end{frame}
-%--------------------------------------------------------------
-\section{Conhecendo o GitHub}
-\begin{frame}{Navegando pelo GitHub}
-  Acesse: 
-  \href{https://github.com/twbs/bootstrap}{https://github.com/twbs/bootstrap}
-  \begin{center}
-       \includegraphics[height=0.7\paperheight]{print_github_1.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Nome do projeto}
-  \begin{center}
-       \includegraphics[height=0.7\paperheight]{nome_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Visibilidade do projeto}
-  \begin{center}
-       \includegraphics[height=0.7\paperheight]{visibilidade_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Observadores do projeto}
-  \begin{center}
-       
-\includegraphics[height=0.7\paperheight]{views_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Favorito}
-  \begin{center}
-       
-\includegraphics[height=0.7\paperheight]{favorito_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Fork}
-  \begin{center}
-       
-\includegraphics[height=0.7\paperheight]{fork_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%--------------------------------------------------------------
-\begin{frame}{Commits}
-  \begin{center}
-       
-\includegraphics[height=0.7\paperheight]{commits_projeto.png} \\
-      \end{center}
- 
-\end{frame}
-%----------------------------------------------------------------------------
-\section{Configurando VSCode com GitHub}
-\begin{frame}{GitHub no VSCode}
-\begin{itemize}
-  \item Acesse o github e crie um repositório para colocar o projeto.
-   \item Clone o projeto no VSCode.
-   \item Faça o \textit{clone} do seu repositório GitHub, utilizando a opção "clonar repositório"na página inicial do VSCode.
-   \end{itemize}
-       \includegraphics[height=0.4\paperheight]{fig/aula4/aula4_1.png} \\
-       \tiny{VSCode Versionamento}.
-     
-\end{frame}
-%----------------------------------------------------------------------------
-\begin{frame}{Versionando com GitHub}
-Crie a pasta docs e dentro dela o arquivo index.html no seu projeto;
-\begin{itemize}
-   \item Barra esquerda do projeto \textit{Controle do código fonte}
-   \item Escolha a opção confirmar alterações
-   \item Digite a mensagem do commit: "criando pasta docs";
-   \item No repositório (navegador) acesse: Settings
-   \item Escolha Pages;
-   \item Cria a sua page, apontando para a pasta docs do repositório no GitHub;
-\end{itemize}
-\end{frame}
-
-
-%-----------------------------------------------------------------
-\section{GitHub}
-\begin{frame}{GitHub}{Enviando modificações}
-  \begin{itemize}
-   \item Faça as edições necessárias na sua página HTML na pasta docs;
-   \item O sistema de versionamento vai solicitar Commit
-   \item Digite a mensagem do commit
-   \item Escolha o Branch \textit{criado por você};
-   \item Atualize a página do repositório no GitHub;
-  \end{itemize}
-
-\end{frame}
-%-----------------------------------------------------------------
-\section{Atividade de aula}
-\begin{frame}{Atividade}{Envie seu repositório feito em aula}
-  \begin{enumerate}
-      \item Seguindo os passos da aula, livros indicados e, a leitura adicional recomendada: \textcolor{blue}{\href{https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site}{Getting started with github pages}}, DESENVOLVA:
-      \item Os passos realizados em aula;
-      \item Envie no BlackBoard o link do repositório criado \textbf{em aula} e da GitHubPage;
-  \end{enumerate}
-
-
-\end{frame}
-%-----------------------------------------------------------------------
-\section{Leitura recomendada}
-\begin{frame}{Leitura complementar}
- Para mais informações sobre Git e GitHub, leia:\\
-  \vspace{0.6cm}
- \begin{columns}
-   \begin{column}{0.4\textwidth}
-%      \textbf{Capítulo 29}\\
- \cite{githubpages2022}\\
- E\\
- \cite{beer2015github}.
+%-----------------------------------------------------
+\section{Função CSS}
+\begin{frame}{CSS Função}
+Uma função consiste em chamar o nome de uma uma função e um par de perenteses, entre os parenteses são iformados os parâmetros.\\
+No caso da função \textbf{calc()} o desenvolvedor inform que a largura da div deve ser 90\% do bloco onde ela está, menos 30px.\\
+\begin{columns}
+\begin{column}{0.5\textwidth}
+        \begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/layout_html1.png} \\
+		  \tiny{Código HTML}
+	  \end{center}
    \end{column}
-   \begin{column}{0.4\textwidth}
-    \includegraphics[height=0.7\paperheight]{introgit.jpg} \\
+   \begin{column}{0.5\textwidth}
+        \begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/layout_css2.png} \\
+		  \tiny{Código CSS}
+	  \end{center}
+	  
    \end{column}
-
- \end{columns}
+\end{columns}
+ \tiny Fontes: \cite{mdn2023}
 \end{frame}
+%-----------------------------------------------------
+\begin{frame}{CSS Função}
+Outro exemplo de função é a rotate aplicada a propriedade transform.\\
+\begin{columns}
+\begin{column}{0.5\textwidth}
+        \begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/layout_html2.png} \\
+		  \tiny{Saída do Código HTML}
+	  \end{center}
+   \end{column}
+   \begin{column}{0.5\textwidth}
+        \begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/layout_css1.png} \\
+		  \tiny{Código CSS: Edite o código anterior para width: 20\% e acrescente a propriedade transform.}
+	  \end{center}
+	  
+   \end{column}
+\end{columns}
+ \tiny Fontes: \cite{mdn2023}
+\end{frame}
+
+%-----------------------------------------------------
+\section{CSS Regras}
+\begin{frame}{CSS Regras}
+Regras CSS são aplicadas com o operador \@. E descrevem formatações CSS que só serão aplicadas dependendo de uma determinada condição.
+\begin{columns}
+\begin{column}{0.5\textwidth}
+        A regra ao lado será aplicada apenas se o monitor que exibe o seu site tiver mais de 30em
+   \end{column}
+   \begin{column}{0.5\textwidth}
+        \begin{center}
+		  \includegraphics[height=0.2\paperheight]{fig/aula2/layout_css3.png} \\
+		  \tiny{Código CSS: Acrescente este código ao CSS anterior.}
+	  \end{center}
+	  
+   \end{column}
+\end{columns}
+Teste a visualização no modo celular nas opções de "inspecionar" do Chrome.\\
+ \tiny Fontes: \cite{mdn2023}
+\end{frame}
+
+%-----------------------------------------------------
+\section{Atividades}
+\begin{frame}{Atividade 1}
+Sobre barras de navegação. Vamos utilizar alguns conceitos conhecidos para criar uma barra de navegação 
+vertical.
+	\begin{center}
+		  \includegraphics[height=0.4\paperheight]{fig/aula2/aep_1_2.png} \\
+	  \end{center}
+\end{frame}
+%-----------------------------------------------------
+\begin{frame}{Atividade 2}
+Reproduza a página a seguir utilizando propriedades de borda;
+  \begin{center}
+    \includegraphics[height=0.2\paperheight]{fig/aula2/AEP_1_1.png} \\
+  \end{center}
+\end{frame}
+
+%-----------------------------------------------------
+
+
 
 %----------------------------------------------------------------------------
 \section{Referências}

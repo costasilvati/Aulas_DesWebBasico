@@ -1,31 +1,10 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
-\usepackage{url}
-\graphicspath{{./fig/aula3}}
-
-% Configurando layout para mostrar codigos C++
-\usepackage{listings}
-\lstset{
-  language=HTML,
-  basicstyle=\ttfamily\small, 
-  keywordstyle=\color{blue}, 
-  stringstyle=\color{red}, 
-  commentstyle=\color{red}, 
-  extendedchars=true, 
-  showspaces=false, 
-  showstringspaces=false, 
-  numbers=left,
-  numberstyle=\tiny,
-  breaklines=true, 
-  backgroundcolor=\color{green!10},
-  breakautoindent=true, 
-  captionpos=b,
-  xleftmargin=0pt,
-}
-
+\graphicspath{{./fig/}}
 
 \title{Desenvolvimento Web Básico}
-\subtitle{Aula 3}
+\subtitle{Aula 2}
+\date{}
 
 \usetheme{lucid}
 
@@ -34,412 +13,359 @@
  \titlepage
 }
 
-\section{Introdução}
-\begin{frame}{Recapitulando...}
-Nas últimas aulas vimos:
+\frame{
+    \frametitle{Roteiro de Aula}
+    \tableofcontents
+}
+
+
+%---------------------------------------------------
+\section{Listas}
+\begin{frame}{Tags HTML - Listas}
+  Listas são utilizada em diversas ocasiões em uma página HTML;
+  \begin{itemize}
+   \item A apresentação de itens do um assunto (como esse slide);
+   \item Estruturação de novos componentes (como um menu);
+  \end{itemize}
+   Existem três tipos de listas no HTML:
   \begin{enumerate}
-   \item Tags HTML;
-   \item Elementos básicos HTML;
-   \item Folha de estilos;
-  \end{enumerate}
-\end{frame}
-%------------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Roteiro} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, 
-%these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame}{Introdução}
-\begin{block}{CSS}
-CSS é a sigla para o termo em inglês Cascading Style Sheets que, traduzido para o português, significa Folha de Estilo em Cascatas. O CSS é fácil de aprender e entender e é facilmente utilizado com as linguagens de marcação HTML ou XHTML. 
-\end{block}
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame}{Introdução}
-\begin{block}{História}
-CSS foi desenvolvido pelo W3C (World Wide Web Consortium) em 1996, por uma razão bem simples. \\
-O HTML não foi projetado para ter tags que ajudariam a formatar a página. \\
-Você deveria apenas escrever a marcação para o site.
-\end{block}
-\end{frame}
-%-------------------------------------------------------------------------------
-\section{CSS}
-\begin{frame}{Sintaxe CSS}
-  \begin{center}
-    \includegraphics[height=0.25\paperheight]{css_sintax.png} \\
-    \tiny \textbf{Fonte:} \cite{freeman2008use}.
-  \end{center}
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame}{Sintaxe CSS}
-  \begin{center}
-    \includegraphics[height=0.25\paperheight]{css_sintax.png} \\
-    \tiny \textbf{Fonte:} \cite{freeman2008use}.
-  \end{center}
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame}{Inserindo estilo}
-Inserindo um arquivo externo CSS.
-  \begin{center}
-    \includegraphics[height=0.12\paperheight]{external_css.png} \\
-    \tiny Link para folha de estilos
-  \end{center}
-  \begin{center}
-    \includegraphics[height=0.08\paperheight]{estilo_elemento.png} \\
-    \tiny Estilo aplicado ao elemento
-  \end{center} 
-\end{frame}
-%-----------------------------------------------------------------------------
-\begin{frame}{Inserindo estilo}
-Qual seria o resultado se para esta situação?
-  \begin{center}
-    \includegraphics[height=0.2\paperheight]{h1_css.png} \\
-		  \tiny Na folha de estilos mystyle.css
-	  \end{center}
-	  \begin{center}
-		  \includegraphics[height=0.3\paperheight]{h1_html.png} \\
-		  \tiny No HTML
-	  \end{center}
-	  
-\end{frame}
-%-----------------------------------------------------------------------------
-\section{Seletores}
-\begin{frame}{Elemento seletor}
-  Os elementos Seletores são utilizados para estilizar elementos HTML.\\
-  Ele encontra os elementos através do nome, id, classe e atributo.
-  \begin{block}{Tipos de seletores*}
-    \begin{itemize}
-      \item Seletor elementos;
-      \item Seletor id;
-      \item Seletor classe;
-    \end{itemize}
- \tiny *Os seletores apresentados são básicos, existem outros tipos de 
-seletores.
-  \end{block}
+   \item Listas ordenadas;
+    \item Listas não ordenadas;
+    \item Listas de definições;
+ \end{enumerate}
+ Também é possível criar listas aninhadas.\\
+ \tiny{Fonte: \cite{miletto2014desenvolvimento}}
 \end{frame}
 %---------------------------------------------------------------------------------
-\begin{frame}{Seletor Elementos}
-Exemplo, seletor de elemento aplicado a $<p>$.
-  \begin{center}
-    \lstinputlisting{cod/elemento.css}
-  \end{center}
+\subsection{Lista ordenada}
+\begin{frame}{Lista ordenada}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+     \begin{itemize}
+      \item Cria uma lista que segue uma sequência numérica;
+       \item Utiliza a tag $<$ol$>$ (\textit{ordered list});
+       \item Cada item da lista é expresso entre a tag $<$li$>$ 
+      (\textit{list item});
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.45\paperheight]{fig/aula1/html2.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Seletor id}
-Exemplo, seletor de elemento aplicado a um elemento com o id ``para1''.
-  \begin{center}
-    \lstinputlisting{cod/seletor_id.css}
-  \end{center}
+%---------------------------------------------------
+\subsection{Lista desordenada}
+\begin{frame}{Lista desordenada}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+     \begin{itemize}
+      \item Cria uma lista que não segue uma sequência.
+       \item Utiliza a tag $<$ul$>$ (\textit{unordered list});
+       \item Cada item da lista é expresso entre a tag $<$li$>$ 
+      (\textit{list item});
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.45\paperheight]{fig/aula1/html3.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Seletor classe}
-Exemplo, seletor de elemento aplicado a um elemento definido com a classe ``center''.
-  \begin{center}
-    \lstinputlisting{cod/seletor_class.css}
-  \end{center}
+%----------------------------------------------------
+\subsection{Lista de definição}
+\begin{frame}{Lista de definição}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+     \begin{itemize}
+      \item Cria uma lista que define algum termo.
+       \item Utiliza a tag $<$dl$>$ (\textit{definition list});
+       \item Um termo é representado pela tag $<$dt$>$ 
+(\textit{definition term});
+       \item A definição é representada pela tag $<$dd$>$ 
+      (\textit{definition definition});
+       \item Uma $<$dt$>$ pode ter uma ou mais $<$dd$>$;
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.55\paperheight]{fig/aula1/html4.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Seletor classe}
-É possível especificar que somente \textbf{um} elemento seja afetado por uma classe:
-    \begin{center}
-      \lstinputlisting[linerange={1-3}]{cod/seletor_class_element.css}
-      \tiny Código HTML
-    \end{center}
-%   \vspace{0.2cm}
-  \begin{center}
-    \lstinputlisting[linerange={5-9}]{cod/seletor_class_element.css}
-    \tiny Código CSS
-  \end{center}
+%-------------------------------------------------------------
+\subsection{Listas aninhadas}
+\begin{frame}{Listas aninhadas}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+     \begin{itemize}
+      \item Um item de uma lista pode se tornar uma nova lista;
+       \item Essa estrutura representa uma sub lista de uma lista 
+principal;
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.55\paperheight]{fig/aula1/html5.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Seletor classe}
-É possível especificar \textbf{mais de uma classe} para um mesmo elemento:
-  \begin{center}
-    \includegraphics[height=0.1\paperheight]{css2.png} \\
-    \tiny Código HTML
-  \end{center}
-% 	\vspace{0.2cm}
-  \begin{center}
-    \includegraphics[height=0.2\paperheight]{css1.png} \\
-    \tiny Código CSS
+%-------------------------------------------------------------
+\section{Âncoras (Links)}
+\begin{frame}{Links}
+  
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+  
+      \begin{itemize}
+      \item Permitem a movimentação entre páginas;
+       \item Utilizado com a tag $<$a$>$;
+       \item \textbf{href:} endereço da página na qual o link 
+aponta; 
+       \item mailto: abre a interface para envio de e-mail;
+       \item \#id: uma parte específica da página;
+       \item Download: link é um download;
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.6\paperheight]{fig/aula1/html6.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+%--------------------------------------------------------------------------
+\begin{frame}{Links}
+  Parâmetros de link:
+     \begin{itemize}
+      \item \textbf{target:} especifica onde abrir o novo documento
+       \item \_blank: abre em uma nova janela;
+       \item \_self: abre onde o documento atual está (default); 
+     \end{itemize}
+     
+     \includegraphics[height=0.25\paperheight]{fig/aula1/html7.png}
+\end{frame}
+%---------------------------------------------------------------------------
+\section{Imagens}
+\begin{frame}{Imagens}
+  Adicionando imagens na página
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+     \begin{itemize}
+      \item Representada pela tag $<$img$>$
+       \item Parâmetros
+      \begin{itemize}
+	 \item \textbf{src:} aponta o caminho da imagem;
+	 \item \textbf{alt:} indica um texto que substitui a imagem;
+	 \item \textbf{title:} apresenta informação adicional sobre a 
+imagem (tootip);
+      \end{itemize}
+    
+     \end{itemize}
+    
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.45\paperheight]{fig/aula1/html8.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}{Imagens}
+  Adicionando imagens como links na página
+
+     \begin{itemize}
+      \item Você pode utilizar uma imagem como link
+       \item Basta adicionar a tag $<$img$>$ dentro da tag $<$a$>$
+     \end{itemize}
+   
+
+     \includegraphics[height=0.15\paperheight]{fig/aula1/html9.png}
+\end{frame}
+
+%----------------AULA 3 Des. App-----------------------------------------------------------
+\section{Marcações}
+\begin{frame}{Atributo id}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+      \small
+     \begin{itemize}
+      \item O atributo id serve para identificar unicamente um
+elemento de uma página;
+       \item Atributo global: qualquer tag do HTML pode possuir um id;
+       \item Seu valor deve começar um uma letra ou um underline;
+       \item Dois elementos em uma mesma página não podem possuir o mesmo 
+id;
+       \item Auxilia o CSS e o JavaScript;
+     \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.45\paperheight]{fig/aula1/html10.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}{Atributo class}
+  \begin{columns}
+    \begin{column}{0.45 \textwidth}
+      \small
+     \begin{itemize}
+      \item O atributo class serve para categorizar um grupo de elementos com o 
+mesmo comportamento;
+       \item Atributo global: qualquer tag do HTML pode possuir um class;
+       \item Seu valor deve começar um uma letra ou um underline;
+       \item Auxilia o CSS e o JavaScript;
+     \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.3\paperheight]{fig/aula1/html11.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}{Elementos: Block}
+  Elementos Block
+     \begin{itemize}
+      \item Elementos que “sempre” são renderizados no começo de
+uma nova linha;
+     \end{itemize}
+ 
+ Elementos Block em HTML
+  \vspace{0.3cm}
+ \begin{center}
+     \includegraphics[height=0.18\paperheight]{fig/aula1/html12.png}
+   \end{center}
+
+\end{frame}
+%---------------------------------------------------------------------------
+\begin{frame}{Elementos: Inline}
+  Elementos Inline
+     \begin{itemize}
+      \item Elementos que “sempre” são renderizados na mesma linha,
+ao término de um elemento anterior;
+     \end{itemize}
+ 
+ Elementos InLine em HTML
+ \vspace{0.3cm}
+ \begin{center}
+     \includegraphics[height=0.18\paperheight]{fig/aula1/html13.png}
    \end{center}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Sobre Seletores...}
-É possível agrupar seletores que possuem características iguais:
+%---------------------------------------------------------------------------
+\begin{frame}{Div}
   \begin{columns}
-    \begin{column}{0.4\textwidth}
-      \begin{center}
-	\includegraphics[height=0.45\paperheight]{seletor_grupo.png} \\
-	\tiny Seletores individuais
-      \end{center}
+    \begin{column}{0.45 \textwidth}
+      \small
+     \begin{itemize}
+       \item Permite o agrupamento de um conjunto de elementos em uma
+box block-level;
+       \item Cada conteúdo de uma div será apresentado em uma nova
+linha;
+       \item Esse comportamento pode ser alterado com CSS;
+       \item Melhora a organização do código;
+       \item É permitido colocar qualquer elemento dentro de uma div;
+     \end{itemize}
     \end{column}
-    \begin{column}{0.4\textwidth}
-      \begin{center}
-	\includegraphics[height=0.15\paperheight]{seletor_grupo1.png} \\
-	\tiny Seletores agrupados
-      \end{center}
+    
+    \begin{column}{0.5\textwidth}
+     \includegraphics[height=0.5\paperheight]{fig/aula1/html14.png}
     \end{column}
-   \end{columns}
+  \end{columns}
 \end{frame}
-%-----------------------------------------------------
-\section{Cores e Background}
-\begin{frame}{Nome de cores CSS}
-	\begin{center}
-			\lstinputlisting{cod/colors.css}
-			\tiny Para mais cores consulte o \href{https://www.w3schools.com/colors/colors_names.asp}{link}.
-		\end{center}
+%--------------------------------------------------------------------
+\section{Agrupando elementos}
+\begin{frame}{Tag - Header}
+  \begin{columns}
+    \begin{column}{0.4 \textwidth}
+      \small
+      \begin{itemize}
+	\item Utilizado para representar o cabeçalho de um documento ou seção;
+	 \item Exemplo: cabeçalho de uma página;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+     \includegraphics[height=0.4\paperheight]{fig/aula1/html15.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%----------------------------------------------------------------------------
-\begin{frame}{Utilizando Cores CSS}
-É possível especificar a cor de vários elementos HTML.
-	\begin{center}
-		\lstinputlisting[linerange={1-1}]{cod/color_elements.css}
-		\tiny Cor de fundo
-	\end{center}
-% 	\vspace{0.2cm}
-	\begin{center}
-		\lstinputlisting[linerange={2-2}]{cod/color_elements.css}
-		\tiny Cor da fonte
-	\end{center}
-	\begin{center}
-		\lstinputlisting[linerange={3-3}]{cod/color_elements.css}
-		\tiny Cor da borda
-	\end{center}
+%-------------------------------------------------------------------------------
+\begin{frame}{Tag - Section}
+  \begin{columns}
+    \begin{column}{0.4 \textwidth}
+      \footnotesize
+      \begin{itemize}
+	\item Representa uma seção dentro de um documento.
+	 \item Utiliza-se essa tag para descrever separadamente as seções 
+e tópicos de um documento;
+	 \item O conjunto de seções completam a relevância do conteúdo do 
+documento, como seções de um artigo de um blog;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+     \includegraphics[height=0.4\paperheight]{fig/aula1/html16.png}
+    \end{column}
+  \end{columns}
+  \textcolor{red}{Salve esse código em um arquivo chamado 1.html}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Cores CSS - RGB}
-É possível criar muitas cores utilizando RGB (red, green, blue)\\
-	\begin{center}
-		  \includegraphics[height=0.4\paperheight]{rgb.png} \\
-		  \tiny Cores rgb.
-	  \end{center}
-	  \begin{center}
-		\lstinputlisting[linerange={4-4}]{cod/color_elements.css}
-		\tiny Exemplo de uso RGB
-	\end{center}
-	  
+%-------------------------------------------------------------------------------
+\begin{frame}{Tag - Main}
+  \begin{columns}
+    \begin{column}{0.4 \textwidth}
+      \footnotesize
+      \begin{itemize}
+	\item Utilizado para especificar o conteúdo principal, de maior
+relevância, de um documento;
+	 \item Cada página deve apresentar apenas um conteúdo principal;
+	 \item Exemplo: espaço reservado para a apresentação do conteúdo 
+de um blog;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+     \includegraphics[height=0.35\paperheight]{fig/aula1/html19.png}
+    \end{column}
+  \end{columns}
+  \textcolor{red}{Salve esse código em um arquivo chamado 2.html}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Cores CSS - HEX}
-É possível criar muitas cores utilizando Hexadecimal \#rrggbb\\
-	\begin{center}
-		\includegraphics[height=0.4\paperheight]{hex.png} \\
-		\tiny Cores Hexadecimal.
-	\end{center}
-	\begin{center}
-		\lstinputlisting[linerange={5-5}]{cod/color_elements.css}
-		\tiny Exemplo de uso Hexadecimal
-	\end{center}
-	  
+%-------------------------------------------------------------------------------
+\begin{frame}{Tag - Aside}
+  \begin{columns}
+    \begin{column}{0.4 \textwidth}
+      \footnotesize
+      \begin{itemize}
+	\item Utilizado para criar um conteúdo de apoio, ou adicional,
+ao conteúdo principal;
+	 \item Exemplo: artigos com temas relacionados de um blog;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+     \includegraphics[height=0.45\paperheight]{fig/aula1/html18.png}
+    \end{column}
+  \end{columns}
+  \textcolor{red}{Salve esse código em um arquivo chamado 3.html}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Cores CSS - RGBA}
-Precisa de transparência? rgba(\textcolor{red}{Red}, \textcolor{green}{Green}, \textcolor{blue}{Blue}, 
-alpha)\\
-	\begin{center}
-		  \includegraphics[height=0.4\paperheight]{rgba.png} \\
-		  \tiny Cores Hexadecimal.
-	  \end{center}
-	  \begin{center}
-		\lstinputlisting[linerange={6-6}]{cod/color_elements.css}
-		\tiny Exemplo de uso RGBA
-	\end{center}
-	  
+%-------------------------------------------------------------------------------
+\begin{frame}{Tag - Nav}
+  \begin{columns}
+    \begin{column}{0.35 \textwidth}
+      \footnotesize
+      \begin{itemize}
+	\item Utilizado para representar um agrupamento de links de
+navegação;
+	 \item Exemplo: paginação de uma busca;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.65\textwidth}
+     \includegraphics[height=0.43\paperheight]{fig/aula1/html17.png}
+    \end{column}
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{O poder das Cores CSS}
-Colorindo elementos com CSS.\\
-Crie uma página colors\_page.html com essa estrutura:
-	\begin{center}
-	 \lstinputlisting[linerange={21-28}]{cod/colors_page.html}
-	\end{center}	  
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{O poder das Cores CSS}
-Acrescente este estilo:
-	\begin{center}
-	 \lstinputlisting[linerange={5-15}]{cod/colors_page.html}
-	\end{center}	  
-\end{frame}
-
-%-----------------------------------------------------
-\begin{frame}{CSS Background}
-Por padrão, uma imagem definida como ``fundo'' de página é repetida. Vejamos o exemplo.\\
-Acrescente este comando a página colors\_page.html 
-	\begin{center}
-	 \lstinputlisting[linerange={16-18}]{cod/colors_page.html}
-	\end{center}	 
-	A imagem esta disponível no link \href{https://1drv.ms/u/s!AkCRf1UFW3BnjMN39kSRO8ijd5nxLg?e=vfcLWp}{LINK paper.jpg}
-\end{frame}
-% %---------------------------------------------------
-\begin{frame}{CSS Background}
-Algumas imagens se repetem horizontalmente ou verticalmente:
-Edite o background-image na página colors\_page.html 
-	\begin{center}
-	 \lstinputlisting[linerange={30-32}]{cod/colors_page.html}
-	\end{center}	 
-	A imagem esta disponível no link \href{https://1drv.ms/u/s!AkCRf1UFW3BnjMN106yoqqENJ2lZTQ?e=bQpiFu}{LINK gradiente.png}
-	
-Se a imagem fosse repetida horizontalmente? Como ficaria?
-  \begin{center}
-	 \lstinputlisting[linerange={33-33}]{cod/colors_page.html}
-	 \tiny{Acrescente ao seu código CSS que formata body}
-	\end{center}
-\end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{CSS Background}
-E se não quiser repetição na imagem de fundo?
-Edite o background-image na página colors\_page.html 
-\begin{center}
-	 \lstinputlisting[linerange={36-36}]{cod/colors_page.html}
-	 \tiny Acrescente ao seu código CSS que formata body\\ 
-	 background-repeat: repeat-y; repete verticalmente
-	\end{center}
-\end{frame}
-% ----------------------------------------------------
-\begin{frame}{Background mais opções}
-
-Edite o background-image na página colors\_page.html 
-	\begin{center}
-	 \lstinputlisting[linerange={34-37}]{cod/colors_page.html}
-	\end{center}	 
-	A imagem esta disponível no link \href{https://goo.gl/images/aSBzRd}{https://goo.gl/images/aSBzRd}
-	
-	Coloque a imagem de fundo no canto direito da página, usando o comando abaixo:
-\begin{center}
-	 \lstinputlisting[linerange={38-38}]{cod/colors_page.html}
-	 \tiny Acrescente ao seu código CSS que formata body\\
-	\end{center}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{CSS Background}
-Replique o texto do corpo da página muitas vezes. Role a página.\\
-
-Vamos fixar a imagem no topo da página:
-\begin{center}
-	 \lstinputlisting[linerange={39-39}]{cod/colors_page.html}
-	 \tiny Acrescente ao seu código CSS que formata body\\
-	\end{center}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{CSS Background}
-Adaptando o espaço de texto\\
-\begin{center}
-	 \lstinputlisting[linerange={42-42}]{cod/colors_page.html}
-	 \tiny Acrescente ao seu código CSS que formata body\\
-	\end{center}
-
-Utilizando uma forma ``curta'' (\textit{shorthand}) de escrever estilos:
-\begin{center}
-	 \lstinputlisting[linerange={40-43}]{cod/colors_page.html}
-	 \tiny Edite o código CSS que formata body\\
-	\end{center}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{CSS Background}
-Para utilizar a formatação \textit{shorthand}, utlize as especificações na seguinte ordem:
- \begin{itemize}
-  \item background-color
-  \item background-image
-  \item background-repeat
-  \item background-attachment
-  \item background-position
- \end{itemize}
-
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{CSS background - Resumo}
-\small
-\begin{table}[]
-\centering
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Property}} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
-background & Altera todas as propriedades em uma declaração; \\ \hline
-background-attachment & Define se a imagem de fundo é fixa ou não; \\ \hline
-background-color & Altera a cor de fundo de um elemento; \\ \hline
-background-image & Altera a imagem de fundo de um elemento; \\ \hline
-background-position & Define a posição de uma imagem de fundo; \\ \hline
-background-repeat & Define se uma imagem de fundo repete. \\ \hline
-\end{tabular}
-\end{table}
-\end{frame}
-%-----------------------------------------------------
-\section{Bordas}
-\begin{frame}{Bordas CSS}
-	Propriedades de borda
- \begin{itemize}
-  \item \textbf{dotted} - Define uma borda pontilhada
-	\item \textbf{dashed} - Define uma borda tracejada
-	\item \textbf{solid} - Define uma borda sólido
-	\item \textbf{double} - Define uma margem dupla
-  \item \textbf{groove} - Define uma borda sulcada 3D. O efeito depende do valor border-color
- \end{itemize}
-
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{Bordas CSS}
-	Propriedades de borda
- \begin{itemize}
-	\item \textbf{ridge} - Define uma borda ridged 3D. O efeito depende do valor border-color
-	\item \textbf{inset} - Define uma borda inset 3D. O efeito depende do valor border-color
-	\item \textbf{outset} - Define uma borda início 3D. O efeito depende do valor border-color
-	\item \textbf{none} - Define sem fronteira
-	\item \textbf{hidden} - Define uma borda escondida
- \end{itemize}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{Bordas CSS}
-Para editar partes da borda:
-\begin{itemize}
-	\item \textbf{border-top-style:} dotted;
-  \item \textbf{border-right-style:} solid;
-  \item \textbf{border-bottom-style:} dotted;
-  \item \textbf{border-left-style:} solid;
-  \item \textbf{border-width:} 20px;
- \end{itemize}
- \tiny Fontes: \cite{wschool2018html, purewal2014learning}
-\end{frame}
-%-----------------------------------------------------
-\section{Atividades}
-\begin{frame}{Atividade 1}
-Sobre barras de navegação. Vamos utilizar alguns conceitos conhecidos para criar uma barra de navegação 
-vertical.
-	\begin{center}
-		  \includegraphics[height=0.4\paperheight]{aep_1_2.png} \\
-	  \end{center}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}{Atividade 2}
-Reproduza a página a seguir utilizando propriedades de borda;
-  \begin{center}
-    \includegraphics[height=0.2\paperheight]{AEP_1_1.png} \\
-  \end{center}
-\end{frame}
-%-------------------------------------------------
-\begin{frame}{Trabalho para entrega}
-\small{
-    Com base nas Tags HTML, CSS e soluçcões Java Script desenvolvidas em aula. DESENVOLVA a estrutura inicial da sua página pessoal. Esta página tem como objetivo ser seu currículo \textit{online}, nela você deve demonstrar que domina o uso de TAGs HTML e CSS, posteriormente será solicitado o uso de JavaScript.\\
-
-A estrutura da sua página deve conter no mínimo:\\
-\begin{itemize}
-    \item Uma imagem;
-    \ietm Duas seções;
-    \item Um menu de navegação;
-    \item Os dados básicos de um currículo (NÃO COLOQUE DOCUMENTOS);
-\end{itemize}
-
-Envie como resposta os links do github (repositório) e githubPage (página publicada);
-
-Resposta 1: Link do repositório:
-    Exemplo: \url{https://github.com/costasilvati/consexpression/}{https://github.com/costasilvati/consexpression/}
-
-Resposta 2: Link da Página publicada:
-    Exemplo:  \url{https://costasilvati.github.io/consexpression/}{https://costasilvati.github.io/consexpression/}
-
-A nota srá associada somente para links válidos e que estejam funcionando.}
+%----------------------------------------------------
+\section{Atividade de aula}
+\begin{frame}{Atividade de aula}
+\begin{block}{Atividade de aula 2}
+    \begin{enumerate}
+        \item Desenvolva uma página HTML (index.html) que explique os fundamentos do HTML (conteúdo da aula 1 e 2);
+        \item Na página index.html crie dois links para outras duas páginas (page1.html e page2.html), um link deve ser em forma texto, o outro link deve ser uma imagem;
+        \item Crie 3 seções na página index.html, uma sobre Tags, uma sobre listas, outra sobre imagens e links;
+        \item Desenvolva um menu na página index.html o menu deve encaminhar o usuário para as seções criadas no item anterior;
+    \end{enumerate}
+\end{block}
+    
 \end{frame}
 %-----------------------------------------------------
 \section{Leitura recomendada}
@@ -453,7 +379,7 @@ A nota srá associada somente para links válidos e que estejam funcionando.}
    \end{column}
    \begin{column}{0.3\textwidth}
     \begin{center}
-  \includegraphics[height=0.45\paperheight]{milleto2014.jpeg} \\
+  \includegraphics[height=0.45\paperheight]{fig/aula2/milleto2014.jpeg} \\
  \end{center}
    \end{column}
  \end{columns}
@@ -469,12 +395,12 @@ A nota srá associada somente para links válidos e que estejam funcionando.}
    \end{column}
    \begin{column}{0.3\textwidth}
     \begin{center}
-  \includegraphics[height=0.5\paperheight]{flatschart2014html.png} \\
+  \includegraphics[height=0.5\paperheight]{fig/aula2/flatschart2014html.png} \\
  \end{center}
    \end{column}
  \end{columns}
 \end{frame}
-%---------------------------------------------------
+%---------------------------------------------------------------------
 \section{Referências}
 \begin{frame}{Referências}%[allowframebreaks]
 \frametitle{Referências}
@@ -482,8 +408,9 @@ A nota srá associada somente para links válidos e que estejam funcionando.}
 \begin{center}
 \tiny
 \bibliographystyle{apalike}
-\bibliography{ref_aula}
+\bibliography{./ref_aula}
 \end{center}
 \end{frame}
+
 
 \end{document}

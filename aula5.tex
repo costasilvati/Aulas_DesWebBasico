@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{hyperref}
-\graphicspath{{./fig/aula5}}
+\graphicspath{{./fig/aula4}}
 
 % Configurando layout para mostrar codigos C++
 \usepackage{listings}
@@ -24,7 +24,7 @@
   xleftmargin=0pt,
 }
 
-
+\date{}
 \title{Desenvolvimento Web Básico}
 \subtitle{Aula 5}
 
@@ -39,52 +39,322 @@
 \begin{frame}{Na aula de hoje...} 
 \tableofcontents 
 \end{frame}
-%--------------------------------------------------------------
-\section{Arrays}
-\begin{frame}{Vetores JS}
-Declarando um array JS.
+
+%-----------------------------------------------------------------------------------------
+\section{Introdução}
+%------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Roteiro} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, 
+%these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+%-------------------------------------------------------------------------
+\section{Introdução}
+\begin{frame}{Tendências...}
+  O GitHub esta mudando o modo como software é criado.
 \begin{itemize}
-    \item Crie um arquivo aula5.js;
-    \item Executaremos o arquivo via comando \textbf{node aula5.js}
-    \item Usa-se \textbf{const};
-    \item É instanciado um objeto da classe Array;
+  \item Concebido originalmente para facilitar colaboração entre 
+desenvolvedores;
+   \item Se transformou rapidamente na plataforma padrão para 
+desenvolvimento de software.
+   \item Ao contrário do que muitos pensam, o GitHub possui outras 
+funções além de armazenamento de código.
 \end{itemize}
-  \begin{center}
-       \includegraphics[height=0.2\paperheight]{fig/aula5/aula_js_5_1.png} \\
-       \tiny{\textbf{Fonte: } A autora.}
+\end{frame}
+%----------------------------------------------------------------------------
+\section{Git}
+\begin{frame}{O que é Git??}
+   Git é um sistema de controle de versões.\\
+   E o que isso quer dizer?
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+       \includegraphics[height=0.4\paperheight]{fig/aula3/git_logo.png} \\
+       \tiny{Logomarca projeto Git}.
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item Um sistema de controle de versões é um software concebido 
+para manter registros de alterações;
+	 \item As alterações podem ser em arquivos de código ou outros 
+tipos de arquivos;
+      \end{itemize} 
+    \end{column}    
+  \end{columns}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Git}
+  \begin{block}{Definição}
+    O Git é um sistema de controle de versão \textit{distribuído}, o que 
+significa que todos os que estiverem trabalhando em um projeto no Git terão uma 
+cópia de todo o histórico do projeto, e não apenas do estado atual dos aquivos.
+  \end{block}
+  \tiny{\cite{beer2015github}}
+
+\end{frame}
+
+%-----------------------------------------------------------------
+\section{GitHub}
+\begin{frame}{GitHub}{Definição}
+  O GitHub é um site em que você podecarregar uma cópia de seu repositório 
+Git.\\
+Ele permite:
+  \begin{itemize}
+   \item Colaborar facilmente com outras pessoas em um projeto.
+    \item Disponibiliza um local centralizado para compartilhar o 
+repositório;
+     \item Utilizar uma interface web para visualizar e utilizar recursos;
+     \item Especificar, discutir e revisar alterações junto a sua equipe 
+de maneira eficiente.
+  \end{itemize}
+
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Qual a diferença??}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{center}
+       \includegraphics[height=0.4\paperheight]{fig/aula3/git_logo.png} \\
+       \tiny{Logomarca projeto Git}.
       \end{center}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{center}
+      \includegraphics[height=0.4\paperheight]{fig/aula3/github_logo.png} \\
+       \tiny{Logomarca projeto GitHub}.
+      \end{center}
+    \end{column}    
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Manipular Array JS}
-Imprimir um vetor em Java Script é simples;
-\lstinputlisting[linerange={13-13}]{cod/aula5_listas.js}
-Acrescentando um elemento no vetor; 
-\lstinputlisting[linerange={10-10}]{cod/aula5_listas.js}
+%-----------------------------------------------------------------
+\begin{frame}{Por que usar Git??}
+   Mesmo para quem trabalho sozinho, existem várias vantagens na 
+utilização do Git.
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+       \includegraphics[height=0.4\paperheight]{fig/aula3/git_logo.png} \\
+       \tiny{Logomarca projeto Git}.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Capacidade de desfazer alterações;
+	 \item Histórico completo de todas as alterações;
+	 \item Registro do motivo pelo qual as alterações foram feitas;
+	 \item Confiança para alterar qualquer trabalho;
+      \end{itemize} 
+    \end{column}    
+  \end{columns}
 \end{frame}
-%---------------------------------------------------------------------------------
-\begin{frame}{Manipular Array JS}
-Remover o elemento de um vetor, usa-se \textbf{splice};
-\lstinputlisting[linerange={12-12}]{cod/aula5_listas.js}\\
-Os valores indicam o índice onde inicia a seleção e a quantidade de elementos removidos.\\
-\paragraph{Exibir um elemento do vetor usa-se vetor[índice]}
-\lstinputlisting[linerange={14-14}]{cod/aula5_listas.js}
-\cite{wschool2018js}
+%-----------------------------------------------------------------
+\begin{frame}{Por que usar GitHub??}
+   Muito mais que um local para guardar repositórios Git, ele proporciona diversas vantagens adicionais, como:
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+       \includegraphics[height=0.4\paperheight]{fig/aula3/github_logo.png} \\
+       \tiny{Logomarca projeto GitHub}.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Documentar requisitos;
+	 \item Colaborar com linhas independentes da história;
+	 \item Revisar um trabalho em progresso;
+	 \item Ver o progresso da equipe.
+      \end{itemize} 
+    \end{column}    
+  \end{columns}
+\end{frame}
+%-----------------------------------------------------------------
+\section{Conceitos}
+\begin{frame}{Conceitos Fundamentais}
+  Para trabalhar com Git e GitHub é necessário entender alguns conceitos fundamentais para que você desenvolva de maneira eficiente.
+\begin{block}{commit}
+ Sempre que suas alterações forem salvas em um ou mais arquivos, para serem guardadas no histórico do Git, você estará realizando um novo \textit{commit}.
+\end{block}
+
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Conceitos Fundamentais}
+\begin{block}{Mensagem de commit}
+ Sempre que você fizer um \textit{commit} será necessário fornecer uma mensagem que descreva o motivo da alteração. Esta mensagem terá uma valor inestimável no futuro!
+\end{block}
+\begin{block}{\textit{Branch} (ramo)}
+  \textit{Branch} é uma série independente de \textit{commit}s laterais que pode ser usada para fazer uma experiência ou para criar uma nova funcionalidade.
+\end{block}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Conceitos Fundamentais}
+\begin{block}{\textit{Branch master}  (ramo principal)}
+  Sempre que um projeto Git for criado, um \textit{branch default} chamado master ou main será criado. Esse é o \textit{branch} em que seu trabalho deverá ser incluido em algum momento, quando estiver pronto para a produção.
+\end{block}
+\begin{block}{\textit{Branch de feature} (ramo de funcionalidade)}
+  Sempre que uma nova funcionalidade for implementada, você deverá criar um \textit{branch} para trabalhar com ela.
+\end{block}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Conceitos Fundamentais}
+\begin{block}{\textit{Fork}  (bifurcar)}
+  Caso você não possua autorização para fazer alterações diretamente em um projeto. Se quiser submeter alterações a um projeto desse tipo, inicialmente você deve criar uma cópia desse projeto com a sua conta de usuário GitHub.
+\end{block}
+\end{frame}
+%--------------------------------------------------------------
+\section{Conhecendo o GitHub}
+\begin{frame}{Navegando pelo GitHub}
+  Acesse: 
+  \href{https://github.com/twbs/bootstrap}{https://github.com/twbs/bootstrap}
+  \begin{center}
+       \includegraphics[height=0.7\paperheight]{fig/aula3/print_github_1.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Nome do projeto}
+  \begin{center}
+       \includegraphics[height=0.7\paperheight]{fig/aula3/nome_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Visibilidade do projeto}
+  \begin{center}
+       \includegraphics[height=0.7\paperheight]{fig/aula3/visibilidade_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Observadores do projeto}
+  \begin{center}
+       
+\includegraphics[height=0.7\paperheight]{fig/aula3/views_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Favorito}
+  \begin{center}
+       
+\includegraphics[height=0.7\paperheight]{fig/aula3/favorito_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Fork}
+  \begin{center}
+       
+\includegraphics[height=0.7\paperheight]{fig/aula3/fork_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}{Commits}
+  \begin{center}
+       
+\includegraphics[height=0.7\paperheight]{fig/aula3/commits_projeto.png} \\
+      \end{center}
+ 
+\end{frame}
+%----------------------------------------------------------------------------
+\section{Configurando VSCode com GitHub}
+\begin{frame}{GitHub no VSCode}
+\begin{itemize}
+  \item Acesse o github e crie um repositório para colocar o projeto.
+   \item Clone o projeto no VSCode.
+   \item Faça o \textit{clone} do seu repositório GitHub, utilizando a opção "clonar repositório"na página inicial do VSCode.
+   \end{itemize}
+       \includegraphics[height=0.4\paperheight]{fig/aula3/aula4_1.png} \\
+       \tiny{VSCode Versionamento}.
+     
+\end{frame}
+%----------------------------------------------------------------------------
+\begin{frame}{Versionando com GitHub}
+Crie a pasta docs e dentro dela o arquivo index.html no seu projeto;
+\begin{itemize}
+   \item Barra esquerda do projeto \textit{Controle do código fonte}
+   \item Escolha a opção confirmar alterações
+   \item Digite a mensagem do commit: "criando pasta docs";
+   \item No repositório (navegador) acesse: Settings
+   \item Escolha Pages;
+   \item Cria a sua page, apontando para a pasta docs do repositório no GitHub;
+\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------------------------
+\section{GitHub}
+\begin{frame}{GitHub}{Enviando modificações}
+  \begin{itemize}
+   \item Faça as edições necessárias na sua página HTML na pasta docs;
+   \item O sistema de versionamento vai solicitar Commit
+   \item Digite a mensagem do commit
+   \item Escolha o Branch \textit{criado por você};
+   \item Atualize a página do repositório no GitHub;
+  \end{itemize}
+
 \end{frame}
 %-----------------------------------------------------------------
 \section{Atividade de aula}
-\begin{frame}{Atividade}
+\begin{frame}{Atividade}{Envie seu repositório feito em aula}
   \begin{enumerate}
-      \item Seguindo os passos da aula, livros indicados e, a leitura adicional recomendada: 
-      \item Uma página que receba valores via input e adicione cada valor a uma posição de um array;
-      \item Exiba o array em um outro elemento da página;
+      \item Seguindo os passos da aula, livros indicados e, a leitura adicional recomendada: \textcolor{blue}{\href{https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site}{Getting started with github pages}}, DESENVOLVA:
+      \item Os passos realizados em aula;
+      \item Envie no BlackBoard o link do repositório criado \textbf{em aula} e da GitHubPage;
   \end{enumerate}
 
 
 \end{frame}
-%----------------------------------------------------------------------------
-\section{Referências}
+%-----------------------------------------------------------------------
+\section{Leitura recomendada}
+\begin{frame}{Leitura complementar}
+ Para mais informações sobre Git e GitHub, leia:\\
+  \vspace{0.6cm}
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+%      \textbf{Capítulo 29}\\
+ \cite{githubpages2022}\\
+ E\\
+ \cite{beer2015github}.
+   \end{column}
+   \begin{column}{0.4\textwidth}
+    \includegraphics[height=0.7\paperheight]{fig/aula3/introgit.jpg} \\
+   \end{column}
 
+ \end{columns}
+\end{frame}
+%-----------------------------------------------------
+\section{Leitura recomendada}
+\begin{frame}{Leitura complementar [1]}
+ Para mais informações sobre HTML e CSS, leia:\\
+ \begin{columns}
+   \begin{column}{0.5\textwidth}
+    Desenvolvimento de Software II: Introdução ao Desenvolvimento Web com HTML, CSS, JavaScript e PHP \\
+     Capítulo 4 - Página 61\\ 
+      \cite{miletto2014desenvolvimento}
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.45\paperheight]{fig/aula2/milleto2014.jpeg} \\
+ \end{center}
+   \end{column}
+ \end{columns}
+\end{frame}
+
+%-----------------------------------------------------
+\begin{frame}{Leitura complementar [2]}
+ Para mais informações sobre HTML5, leia:\\
+ \begin{columns}
+   \begin{column}{0.4\textwidth}
+     HTML5 - Embarque imediato\\ 
+      \cite{flatschart2011html}
+   \end{column}
+   \begin{column}{0.3\textwidth}
+    \begin{center}
+  \includegraphics[height=0.5\paperheight]{fig/aula2/flatschart2014html.png} \\
+ \end{center}
+   \end{column}
+ \end{columns}
+\end{frame}
+%---------------------------------------------------
+\section{Referências}
 \begin{frame}{Referências}%[allowframebreaks]
+\frametitle{Referências}
 \small
 \begin{center}
 \tiny
@@ -92,7 +362,5 @@ Os valores indicam o índice onde inicia a seleção e a quantidade de elementos
 \bibliography{ref_aula}
 \end{center}
 \end{frame}
-
-\end{document}
 
 \end{document}
